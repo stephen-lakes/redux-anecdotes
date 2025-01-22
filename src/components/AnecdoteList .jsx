@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
 
 export const Anecdote = ({ anecdote, vote }) => {
   return (
@@ -24,7 +25,16 @@ Anecdote.propTypes = {
 };
 
 const AnecdoteList = () => {
-  return <div>AnecdoteList </div>;
+  const dispatch = useDispatch();
+  const anecdotes = useSelector(state => state);
+
+  return (
+    <>
+      {anecdotes.map((anecdote) => (
+        <Anecdote key={anecdote.id} anecdote={anecdote} vote={() => {}} />
+      ))}
+    </>
+  );
 };
 
 export default AnecdoteList;
