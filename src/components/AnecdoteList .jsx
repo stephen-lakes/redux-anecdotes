@@ -17,7 +17,7 @@ export const Anecdote = ({ anecdote, vote }) => {
 
 Anecdote.propTypes = {
   anecdote: PropTypes.shape({
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     votes: PropTypes.number.isRequired,
   }).isRequired,
@@ -26,7 +26,7 @@ Anecdote.propTypes = {
 
 const AnecdoteList = () => {
   const dispatch = useDispatch();
-  const anecdotes = useSelector(state => state);
+  const anecdotes = useSelector((state) => state);
 
   return (
     <>
