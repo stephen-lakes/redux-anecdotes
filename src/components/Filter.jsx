@@ -1,12 +1,11 @@
 const Filter = () => {
+  const handleChange = (event) => {
+    event.preventDefault();
+  };
 
-    const handleChange = (event) => {
-        event.preventDefault()-
-    }
-
-    const style = {
-        marginBottom: 10,
-    };
+  const style = {
+    marginBottom: 10,
+  };
 
   return (
     <div style={style}>
