@@ -29,6 +29,8 @@ const reducer = (state = initialState, action) => {
           ? { ...anecdote, votes: anecdote.votes + 1 }
           : anecdote
       );
+    case "ZERO":
+      return initialState;
     default:
       return state;
   }
@@ -51,6 +53,12 @@ export const vote = (id) => {
     payload: {
       id,
     },
+  };
+};
+
+export const reset = () => {
+  return {
+    type: "ZERO",
   };
 };
 
