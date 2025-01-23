@@ -28,10 +28,11 @@ Anecdote.propTypes = {
 const AnecdoteList = () => {
   const dispatch = useDispatch();
   const anecdotes = useSelector((state) => state);
+  const sortedAnecdotes = [...anecdotes].sort((a, b) => b.votes - a.votes);
 
   return (
     <>
-      {anecdotes.map((anecdote) => (
+      {sortedAnecdotes.map((anecdote) => (
         <Anecdote
           key={anecdote.id}
           anecdote={anecdote}
