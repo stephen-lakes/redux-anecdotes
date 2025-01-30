@@ -41,7 +41,7 @@ const anecdoteSlice = createSlice({
           : anecdote
       );
     },
-    reset(state) {
+    reset() {
       return initialState;
     },
   },
