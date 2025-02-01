@@ -44,10 +44,13 @@ const anecdoteSlice = createSlice({
     reset() {
       return initialState;
     },
+    setAnecdotes(state, action) {
+      return action.payload;
+    },
   },
 });
 
-
-export const { createAnecdote, vote, reset } = anecdoteSlice.actions;
+export const { createAnecdote, vote, reset, setAnecdotes } =
+  anecdoteSlice.actions;
 
 export default anecdoteSlice.reducer;
