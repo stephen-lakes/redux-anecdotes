@@ -5,7 +5,6 @@ import {
   hideNotification,
   showNotification,
 } from "../reducers/notificationReducer";
-import anecdoteService from "../services/anecdotes";
 
 export const Anecdote = ({ anecdote, handleClick }) => {
   return (
@@ -46,7 +45,6 @@ const AnecdoteList = () => {
           key={anecdote.id}
           anecdote={anecdote}
           handleClick={() => {
-            anecdoteService.vote(anecdote.id);
             dispatch(vote(anecdote.id));
             dispatch(
               showNotification({
