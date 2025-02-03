@@ -1,11 +1,7 @@
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { vote } from "../reducers/anecdoteReducer";
-import {
-  hideNotification,
-  setNotification,
-  showNotification,
-} from "../reducers/notificationReducer";
+import { setNotification } from "../reducers/notificationReducer";
 
 export const Anecdote = ({ anecdote, handleClick }) => {
   return (
