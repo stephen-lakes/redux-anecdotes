@@ -25,7 +25,16 @@ const notificationSlice = createSlice({
 });
 
 // ecport the actinon creators
-export const { showNotification, hideNotification } = notificationSlice.actions;
+export const { hideNotification, showNotification } =
+  notificationSlice.actions;
+
+
+export const setNotification = (message, time) => {
+  return async dispatch => {
+    dispatch(showNotification({message, type:"success" }))
+    setTimeout(() => dispatch(hideNotification()), time);
+  }
+}
 
 // expoet the reducer
 export default notificationSlice.reducer;
